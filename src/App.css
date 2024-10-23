@@ -67,4 +67,80 @@ select {
   padding: 0 20px 5px 20px;
   border: 3px solid white;
   width: 60%;
+  height: 300px;
+}
+.buttons button {
+  width: 100px;
+  height: 30px;
+  margin-right: 10px;
+}
+@media only screen and (max-width: 425px) {
+  .contact_heading {
+    font-size: 40px;
+  }
+  .form {
+    border: 0px solid white;
+    width: 100%;
+  }
+  .user_name {
+    margin-top: 2px;
+    width: 150px;
+  }
+  .contact_number {
+    margin-top: 2px;
+    width: 150px;
+  }
+  .email {
+    margin-top: 2px;
+    width: 150px;
+  }
+  .gender {
+    margin-top: 2px;
+    width: 162px;
+  }
+  .age {
+    margin-top: 2px;
+    width: 150px;
+  }
+  .create_button {
+    margin-left: 120px;
+  }
+  .contact-card {
+    border: 0px solid white;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .contact_heading {
+    font-size: 35px;
+  }
+  .form {
+    border: 0px solid white;
+    width: 100%;
+  }
+  .user_name {
+    margin-top: 2px;
+    width: 100px;
+  }
+  .contact_number {
+    margin-top: 2px;
+    width: 100px;
+  }
+  .email {
+    margin-top: 2px;
+    width: 100px;
+  }
+  .gender {
+    margin-top: 2px;
+    width: 112px;
+  }
+  .age {
+    margin-top: 2px;
+    width: 100px;
+  }
+  .create_button {
+    margin-left: 120px;
+  }
+  .contact-card {
+    border: 0px solid white;
+  }
 }

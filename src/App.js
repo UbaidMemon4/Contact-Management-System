@@ -166,14 +166,18 @@ function App() {
                 <b>Age : </b>
                 {contactData.age}
               </p>
-              <button
-                onClick={() => {
-                  handleOnEdit(contactData);
-                }}
-              >
-                Edit
-              </button>
-              <button onClick={() => handleOnClick(contactData)}>Delete</button>
+              <div className="buttons">
+                <button
+                  onClick={() => {
+                    handleOnEdit(contactData);
+                  }}
+                >
+                  Edit
+                </button>
+                <button onClick={() => handleOnClick(contactData)}>
+                  Delete
+                </button>
+              </div>
             </div>
           );
         })}
