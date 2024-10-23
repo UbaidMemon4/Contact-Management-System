@@ -1,6 +1,6 @@
 import "./App.css";
 import { useState } from "react";
-
+import { PhoneOutlined } from "@ant-design/icons";
 function App() {
   const CONTACT = localStorage.getItem("contact");
 
@@ -54,7 +54,7 @@ function App() {
   };
   const handleOnClick = (c) => {
     const update = contact.filter((t) => t.id !== c.id);
-    setContact(update); 
+    setContact(update);
     localStorage.setItem("contact", JSON.stringify(update));
   };
 
@@ -66,8 +66,12 @@ function App() {
     setAge(t.age);
   };
   return (
-    <div>
-      <h1 className="contact_heading">Contact </h1>
+    <div className="ContactApp">
+      <div>
+        <h1 className="contact_heading">
+          <PhoneOutlined /> Add Contact
+        </h1>
+      </div>
       <div className="form">
         <form onSubmit={onSubmit}>
           <label>Enter Your User Name</label>
@@ -78,6 +82,7 @@ function App() {
             onChange={(e) => {
               setUserName(e.target.value);
             }}
+            required
           />
           <br />
           <label>Enter Your Contact Number</label>
@@ -88,6 +93,7 @@ function App() {
             onChange={(e) => {
               setContactNumber(e.target.value);
             }}
+            required
           />
           <br />
           <label>Enter Your Email</label>
@@ -98,6 +104,7 @@ function App() {
             onChange={(e) => {
               setEmail(e.target.value);
             }}
+            required
           />
           <br />
           <label>Select Your Gender</label>
@@ -107,6 +114,7 @@ function App() {
             onChange={(e) => {
               setGender(e.target.value);
             }}
+            required
           >
             <option>Select</option>
 
@@ -116,6 +124,7 @@ function App() {
           <br />
           <label>Enter Your age</label>
           <input
+            placeholder="0"
             value={age}
             className="age"
             defaultValue={0}
@@ -123,31 +132,48 @@ function App() {
             onChange={(e) => {
               setAge(e.target.value);
             }}
+            required
           />
           <br />
           <button type="submit" className="create_button">
-            {contactId ? "Update" : "Create"}
+            {contactId ? "Update Contact" : "Create Contact"}
           </button>
         </form>
-        <h1 className="contact_heading">Contact List</h1>
-        <div className="todo-container"></div>
+      </div>
 
-        {contact.map((c) => {
+      <h1 className="contact_heading">Contact List</h1>
+      <div className="contact-card">
+        {contact.map((contactData) => {
           return (
-            <div key={c.id} className="contact-card">
-              <p><b>User Name : </b>{c.userName}</p>
-              <p><b>Contact Number : </b>{c.contactNumber}</p>
-              <p><b>Email : </b>{c.email}</p>
-              <p><b>Gender : </b>{c.gender}</p>
-              <p><b>Age : </b>{c.age}</p>
+            <div key={contactData.id}>
+              <p>
+                <b>User Name : </b>
+                {contactData.userName}
+              </p>
+              <p>
+                <b>Contact Number : </b>
+                {contactData.contactNumber}
+              </p>
+              <p>
+                <b>Email : </b>
+                {contactData.email}
+              </p>
+              <p>
+                <b>Gender : </b>
+                {contactData.gender}
+              </p>
+              <p>
+                <b>Age : </b>
+                {contactData.age}
+              </p>
               <button
                 onClick={() => {
-                  handleOnEdit(c);
+                  handleOnEdit(contactData);
                 }}
               >
                 Edit
               </button>
-              <button onClick={() => handleOnClick(c)}>Delete</button>
+              <button onClick={() => handleOnClick(contactData)}>Delete</button>
             </div>
           );
         })}

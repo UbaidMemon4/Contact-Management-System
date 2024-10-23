@@ -1,53 +1,70 @@
+.ContactApp {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
 .contact_heading {
   color: white;
-  text-align: center;
   font-size: 50px;
 }
 .form {
-  margin-left: 44px;
   color: white;
+  margin: 0 15px;
+  padding: 15px 20px;
+  border: 3px solid white;
+  width: 60%;
 }
 .form input,
 .form select {
   background: transparent;
   margin-bottom: 8px;
+  padding: 0 5px;
+  height: 25px;
   color: white;
 }
-option{
+option {
   background-color: #00960a;
 }
 
-::placeholder{
- color: white; 
+::placeholder {
+  color: white;
 }
-input {
-height: 18px;
-}
-select{
-height: 20px;
-
+select {
+  color: white;
 }
 .user_name {
-  margin-left: 70px;
+  margin-left: 50px;
+  width: 188px;
 }
 .contact_number {
-  margin-left: 31px;
+  width: 188px;
+  margin-left: 12px;
 }
 .email {
-  margin-left: 110px;
+  width: 188px;
+  margin-left: 90px;
 }
 .gender {
-  margin-left: 91px;
+  margin-left: 73px;
+  width: 200px;
   cursor: pointer;
-
 }
 .age {
-  margin-left: 120px;
+  width: 188px;
+  margin-left: 103px;
 }
-.create_button{
-cursor: pointer;
-margin-left: 138px;
-width: 128px;
-height: 40px;
-margin-top: 11px;
+.create_button {
+  cursor: pointer;
+  width: 128px;
+  height: 40px;
+  margin-top: 11px;
+  margin-left: 277px;
+}
+.contact-card {
+  color: white;
+  margin: 0 15px;
+  padding: 0 20px 5px 20px;
+  border: 3px solid white;
+  width: 60%;
 }
